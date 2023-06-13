@@ -2,7 +2,6 @@ from langchain.agents import Tool
 from langchain.prompts import BaseChatPromptTemplate
 from typing import List
 from langchain.schema import HumanMessage
-import re
 
 # Set up the base template
 template = """Complete the objective as best you can. You have access to the following tools:
