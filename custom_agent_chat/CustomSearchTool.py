@@ -1,10 +1,7 @@
-from typing import Optional, Type
+from typing import Optional
 
 from langchain.callbacks.manager import AsyncCallbackManagerForToolRun, CallbackManagerForToolRun
-from langchain import LLMMathChain, SerpAPIWrapper
-from langchain.agents import AgentType, initialize_agent
-from langchain.chat_models import ChatOpenAI
-from langchain.tools import BaseTool, StructuredTool, Tool, tool
+from langchain.tools import BaseTool
 
 class CustomSearchTool(BaseTool):
     name = "job_search"
