@@ -1,11 +1,8 @@
-from langchain.agents import Tool, AgentExecutor, LLMSingleActionAgent, AgentOutputParser
+from langchain.agents import Tool
 from langchain.prompts import BaseChatPromptTemplate
-from langchain import SerpAPIWrapper, LLMChain
-from langchain.chat_models import ChatOpenAI
-from typing import List, Union
-from langchain.schema import AgentAction, AgentFinish, HumanMessage
+from typing import List
+from langchain.schema import HumanMessage
 import re
-from getpass import getpass
 
 # Set up the base template
 template = """Complete the objective as best you can. You have access to the following tools:
