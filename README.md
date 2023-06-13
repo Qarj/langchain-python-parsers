@@ -60,3 +60,9 @@ Final Answer: Here are 5 Test Engineer jobs in London:
    Salary: £21,750
 ```
 
+## 3_underscore_parser_custom_agent_chat
+
+```sh
+cd 3_underscore_parser_custom_agent_chat
+python custom_agent_chat.py
+```
