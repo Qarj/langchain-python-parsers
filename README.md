@@ -23,3 +23,9 @@ python hello_world.py
 .
 Hallo Welt!
 ```
+
+NB. Need to use Python 3.8 or higher, so activate an appropriate virtual environment if necessary.
+
+```sh
+conda activate nnseries
+```
