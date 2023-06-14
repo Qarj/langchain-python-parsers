@@ -3,7 +3,7 @@ from typing import Optional
 from langchain.callbacks.manager import AsyncCallbackManagerForToolRun, CallbackManagerForToolRun
 from langchain.tools import BaseTool
 
-class CustomSearchTool(BaseTool):
+class JobSearchTool(BaseTool):
     name = "job_search"
     description = "Useful for doing a job search. Input is a job title. Output is a list of jobs."
 

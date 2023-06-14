@@ -4,20 +4,20 @@ load_dotenv()
 from langchain.agents import Tool, AgentExecutor, LLMSingleActionAgent
 from langchain import LLMChain
 from langchain.chat_models import ChatOpenAI
-from CustomSearchTool import CustomSearchTool
-from CustomPromptTemplate import CustomPromptTemplate, template
-from CustomOutputParser import CustomOutputParser
+from JobSearchTool import JobSearchTool
+from ThreeUnderscorePromptTemplate import ThreeUnderscorePromptTemplate, template
+from ThreeUnderscoreOutputParser import ThreeUnderscoreOutputParser
 
-search = CustomSearchTool()
+search = JobSearchTool()
 tools = [
     Tool(
-        name = "CustomSearchTool",
+        name = "JobSearchTool",
         func=search.run,
-        description="Useful for doing some kind of search"
+        description="Useful for searching for jobs, input is jobTitle and jobLocation as a JSON object"
     )
 ]
 
-prompt = CustomPromptTemplate(
+prompt = ThreeUnderscorePromptTemplate(
     template=template,
     tools=tools,
     # This omits the `agent_scratchpad`, `tools`, and `tool_names` variables because those are generated dynamically
@@ -26,7 +26,7 @@ prompt = CustomPromptTemplate(
 )
 
 
-output_parser = CustomOutputParser()
+output_parser = ThreeUnderscoreOutputParser()
 llm = ChatOpenAI(temperature=0, model="gpt-4")
 # LLM chain consisting of the LLM and a prompt
 llm_chain = LLMChain(llm=llm, prompt=prompt)

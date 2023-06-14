@@ -3,7 +3,7 @@ from typing import Union
 from langchain.schema import AgentAction, AgentFinish
 import re
 
-class CustomOutputParser(AgentOutputParser):
+class ThreeUnderscoreOutputParser(AgentOutputParser):
     
     def parse(self, llm_output: str) -> Union[AgentAction, AgentFinish]:
         text = llm_output

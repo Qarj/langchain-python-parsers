@@ -35,7 +35,7 @@ Response:
 """
 
 # Set up a prompt template
-class CustomPromptTemplate(BaseChatPromptTemplate):
+class ThreeUnderscorePromptTemplate(BaseChatPromptTemplate):
     # The template to use
     template: str
     # The list of tools available
