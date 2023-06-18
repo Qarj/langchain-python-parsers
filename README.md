@@ -8,6 +8,7 @@ Demo of various custom parsers for the Python version of langchain
 pip install langchain
 pip install openai
 pip install python-dotenv
+pip install fix-busted-json
 ```
 
 Create a .env file with the following contents:
@@ -64,5 +65,12 @@ Final Answer: Here are 5 Test Engineer jobs in London:
 
 ```sh
 cd ThreeUnderscoreParser
+python agent_chat.py
+```
+
+## Json Parser
+
+```sh
+cd JsonParser
 python agent_chat.py
 ```
