@@ -7,16 +7,17 @@ PREFIX = "Answer the following question as best you can. You have access to the 
 SUFFIX = """Begin!
 Question: {input}
 Thought:{agent_scratchpad}
-Response as valid JSON object  "thought": "<mandatory>", "action": "<mandatory>", "actionInput": "<mandatory>" :
+Response as valid JSON object {open_brace} "thought": "<mandatory>", "action": "<mandatory>", "actionInput": "<mandatory>" {close_brace}:
 """
 
-def format_instructions(tool_names):
-    return f"""The response is a valid JSON object in the following format:
+instructions = """The response is a valid JSON object in the following format:
 
+{open_brace}
     "thought": "(Provide your thought process here)",
     "action": "(Specify the action you will take, i.e. choose one of {tool_names})",
     "actionInput": "(Provide the input for the action in the required format)"
-
+{close_brace}
+    
 In the next iteration you will be given the Observation from the previous iteration.
 You can then choose the tool to give the final answer, or you can continue to use the other tools to gather more observations.
 """
@@ -38,8 +39,11 @@ class JsonPromptTemplate(BaseChatPromptTemplate):
         tool_names = ", ".join([tool.name for tool in self.tools])
         tool_names += ", FinalResponse"
 
-        instructions = format_instructions(tool_names)
         template = "\n\n".join([PREFIX, tool_strings, instructions, SUFFIX])
+
+        kwargs["tool_names"] = tool_names
+        kwargs["open_brace"] = "{"
+        kwargs["close_brace"] = "}"
 
         formatted = template.format(**kwargs)
         return [HumanMessage(content=formatted)]

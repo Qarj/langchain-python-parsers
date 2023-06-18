@@ -74,3 +74,8 @@ python agent_chat.py
 cd JsonParser
 python agent_chat.py
 ```
+
+Json Parser to do:
+
+-   [ ] Log the action input and make sure it is a string
+-   [ ] Create unit tests
