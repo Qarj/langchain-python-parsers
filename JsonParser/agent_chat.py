@@ -12,6 +12,8 @@ from JsonOutputParser import JsonOutputParser
 
 # https://python.langchain.com/docs/modules/model_io/models/llms/integrations/azure_openai_example
 
+# See here for Azure: https://api.python.langchain.com/en/latest/modules/chat_models.html
+
 search = JobSearchTool()
 tools = [
     Tool(
