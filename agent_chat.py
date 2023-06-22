@@ -19,17 +19,14 @@ tools = [
     )
 ]
 
-prompt = ThreeUnderscorePromptTemplate(
-    tools=tools,
-    # This omits the `agent_scratchpad`, `tools`, and `tool_names` variables because those are generated dynamically
-    # This includes the `intermediate_steps` variable because that is needed
-    input_variables=["input", "intermediate_steps"]
-)
+# prompt = ThreeUnderscorePromptTemplate(tools=tools, input_variables=["input", "intermediate_steps"])
+# output_parser = ThreeUnderscoreOutputParser()
+
+prompt = JsonPromptTemplate(tools=tools, input_variables=["input", "intermediate_steps"])
+output_parser = JsonOutputParser()
 
 
-output_parser = ThreeUnderscoreOutputParser()
 llm = ChatOpenAI(temperature=0, model="gpt-4")
-# LLM chain consisting of the LLM and a prompt
 llm_chain = LLMChain(llm=llm, prompt=prompt)
 
 tool_names = [tool.name for tool in tools]
