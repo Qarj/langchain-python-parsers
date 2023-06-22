@@ -4,9 +4,9 @@ load_dotenv()
 from langchain.agents import Tool, AgentExecutor, LLMSingleActionAgent
 from langchain import LLMChain
 from langchain.chat_models import ChatOpenAI
-from JobSearchTool import JobSearchTool
-from ThreeUnderscorePromptTemplate import ThreeUnderscorePromptTemplate, template
-from ThreeUnderscoreOutputParser import ThreeUnderscoreOutputParser
+from Tools.JobSearchTool import JobSearchTool
+from ThreeUnderscoreParser.ThreeUnderscorePromptTemplate import ThreeUnderscorePromptTemplate, template
+from ThreeUnderscoreParser.ThreeUnderscoreOutputParser import ThreeUnderscoreOutputParser
 
 search = JobSearchTool()
 tools = [

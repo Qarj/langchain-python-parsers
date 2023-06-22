@@ -6,9 +6,9 @@ load_dotenv()
 from langchain.agents import Tool, AgentExecutor, LLMSingleActionAgent
 from langchain import LLMChain
 from langchain.chat_models import ChatOpenAI
-from JobSearchTool import JobSearchTool
-from JsonPromptTemplate import JsonPromptTemplate
-from JsonOutputParser import JsonOutputParser
+from Tools.JobSearchTool import JobSearchTool
+from JsonParser.JsonPromptTemplate import JsonPromptTemplate
+from JsonParser.JsonOutputParser import JsonOutputParser
 
 # https://python.langchain.com/docs/modules/model_io/models/llms/integrations/azure_openai_example
 
