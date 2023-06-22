@@ -5,7 +5,7 @@ from langchain.tools import BaseTool
 
 class JobSearchTool(BaseTool):
     name = "job_search"
-    description = "Useful for doing a job search. Input is a job title. Output is a list of jobs."
+    description = "Useful for doing a job search. Input is a single string containing a stringified JSON object with jobTitle. Ouput is a list of jobs."
 
     def _run(self, query: str, run_manager: Optional[CallbackManagerForToolRun] = None) -> str:
         """Use the tool."""
