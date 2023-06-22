@@ -5,8 +5,10 @@ from langchain.agents import Tool, AgentExecutor, LLMSingleActionAgent
 from langchain import LLMChain
 from langchain.chat_models import ChatOpenAI
 from Tools.JobSearchTool import JobSearchTool
-from ThreeUnderscoreParser.ThreeUnderscorePromptTemplate import ThreeUnderscorePromptTemplate, template
+from ThreeUnderscoreParser.ThreeUnderscorePromptTemplate import ThreeUnderscorePromptTemplate
 from ThreeUnderscoreParser.ThreeUnderscoreOutputParser import ThreeUnderscoreOutputParser
+from JsonParser.JsonPromptTemplate import JsonPromptTemplate
+from JsonParser.JsonOutputParser import JsonOutputParser
 
 search = JobSearchTool()
 tools = [
@@ -18,7 +20,6 @@ tools = [
 ]
 
 prompt = ThreeUnderscorePromptTemplate(
-    template=template,
     tools=tools,
     # This omits the `agent_scratchpad`, `tools`, and `tool_names` variables because those are generated dynamically
     # This includes the `intermediate_steps` variable because that is needed
