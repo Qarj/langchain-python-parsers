@@ -36,8 +36,6 @@ Response:
 
 # Set up a prompt template
 class ThreeUnderscorePromptTemplate(BaseChatPromptTemplate):
-    # The template to use
-    template: str
     # The list of tools available
     tools: List[Tool]
     
@@ -58,6 +56,6 @@ class ThreeUnderscorePromptTemplate(BaseChatPromptTemplate):
         kwargs["tool_names"] = ", ".join([tool.name for tool in self.tools])
         kwargs["tool_names"] += ", FinalResponse"
         kwargs["tool_count"] = len(self.tools) + 1
-        formatted = self.template.format(**kwargs)
+        formatted = template.format(**kwargs)
         return [HumanMessage(content=formatted)]
     
