@@ -61,21 +61,16 @@ Final Answer: Here are 5 Test Engineer jobs in London:
    Salary: £21,750
 ```
 
-## Three Underscore Parser
+## Trying different parers
 
-```sh
-cd ThreeUnderscoreParser
-python agent_chat.py
+Comment and uncomment code in `job_bot.py` to try out different parsers.
+
+There are three parsers:
+
+-   built-in parser
+-   ThreeUnderscore parser
+-   JSON parser
+
+```python
+python job_bot.py
 ```
-
-## Json Parser
-
-```sh
-cd JsonParser
-python agent_chat.py
-```
-
-Json Parser to do:
-
--   [ ] Log the action input and make sure it is a string
--   [ ] Create unit tests

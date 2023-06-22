@@ -1,4 +1,4 @@
-def formatted_journey_prompt():
+def build_formatted_journey_prompt():
 
     journey_prompt = """Your name is JobBot. You are an advanced AI that helps people find jobs. You
     are currently helping a person find a job. You are currently in the middle of a conversation with a person.
